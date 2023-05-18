@@ -66,8 +66,9 @@ function booksByColor(books) {
  ****************************************************************/
 function titlesByAuthorName(authorName, authors, books) {
   const author = getAuthorByName(authorName, authors);
-  if (!author) return [];
-  return author.book.map((bookId) => getBookById(bookId, books).title);
+  if (author) {
+    return author.books.map((bookId) => getBookById(bookId, books).title);
+  }
 }
 
 /**************************************************************
@@ -78,14 +79,13 @@ function titlesByAuthorName(authorName, authors, books) {
  * Note: assume there will never be a tie
  ****************************************************************/
 function mostProlificAuthor(authors) {
-  let prolificAuthor = authors[authors.length];
+  let prolificAuthor = authors[0];
 
   authors.forEach((author) => {
-    if (author.books.length() > prolificAuthor.books.length()) {
+    if (author.books.length > prolificAuthor.books.length) {
       prolificAuthor = author;
     }
   });
-
   return prolificAuthor.name;
 }
 
@@ -100,7 +100,7 @@ function mostProlificAuthor(authors) {
  *
  ****************************************************************/
 function relatedBooks(bookId, authors, books) {
-  const book = getBookById(books, bookId);
+  const book = getBookById(bookId, books);
   let titles = [];
 
   book.authors.forEach(
@@ -163,7 +163,7 @@ console.log(getBookById(12, books));
 console.log(getAuthorByName("J.K. Rowling", authors));
 console.log(bookCountsByAuthor(authors));
 console.log(booksByColor(books));
-// console.log(titlesByAuthorName("George R.R. Martin", authors, books));
-// console.log(mostProlificAuthor(authors));
-// console.log(relatedBooks(50, authors, books));
-// console.log(friendliestAuthor(authors));
+console.log(titlesByAuthorName("George R.R. Martin", authors, books));
+console.log(mostProlificAuthor(authors));
+console.log(relatedBooks(50, authors, books));
+console.log(friendliestAuthor(authors));
