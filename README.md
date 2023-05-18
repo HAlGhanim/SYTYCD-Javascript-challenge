@@ -1,4 +1,6 @@
-# JavaScript Episode 4
+# SYTYCD Javascript Challenge
+
+Can you beat this challenge within 10 mins?!
 
 ## Instructions
 
