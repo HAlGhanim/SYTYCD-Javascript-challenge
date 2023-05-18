@@ -2,39 +2,10 @@
 
 ## Instructions
 
-#### Tools
+1. Fork this repo
+2. Clone
+3. Run node functions.js
+4. Read the produced error and try to resolve it.
+5. Repeat step 3 and 4 till your code runs with no errors
 
-- Install `node`:
-  ```bash
-  $ brew install node
-  ```
-- Install `yarn`:
-
-  ```bash
-  $ brew install yarn --without-node
-  ```
-
-#### The Files
-
-**Fork** this repository and clone your fork (make sure you clone it into your `development` directory):
-
-```bash
-$ git clone https://github.com/<your_username>/JSEpisode4.git
-```
-
-#### Running The Tests
-
-Install all the requirements:
-
-1. Navigate to the project root (you'll find a file called `package.json` there).
-2. Install the requirments using `yarn install`.
-
-Run the tests:
-
-```bash
-$ yarn test
-```
-
-This command will run the testing file and test your code to make sure it has all the required features.
-
-You'll know when you're done when your code passes all the tests.
+Make sure to uncomment the function call at the end to test your code.
